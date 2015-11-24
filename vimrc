@@ -5,7 +5,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-
+" hightlight current line
+set cursorline
 " show tab in a visiable mode
 "set list
 "set listchars=tab:>-,trail:-
@@ -51,7 +52,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'benjaminwhite/Benokai'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'powerline/fonts'
 Plugin 'moll/vim-node'
 Plugin 'kchmck/vim-coffee-script'
