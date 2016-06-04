@@ -70,6 +70,7 @@ call vundle#begin()
 "let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'              " file tree
+Plugin 'xuyuanp/nerdtree-git-plugin'      " nerd tree show git status flags
 Plugin 'tomtom/checksyntax_vim'           " check file syntax
 Plugin 'taglist.vim'                      
 Plugin 'grep.vim'                         " search keyword tool
@@ -98,6 +99,20 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeWinSize = 30
+let NERDTreeAutoDeleteBuffer = 1
+
+" nerdtree git plugin --------------------------------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 "checksyntax  need install checker by you self -------------------------------
 "
