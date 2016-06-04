@@ -94,7 +94,7 @@ filetype plugin indent on   " required
 " nerdtree -------------------------------------------------------------------
 nmap <Leader>fl :NERDTreeToggle<CR>
 "Open NERDTree when vim starts up
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 "Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeWinSize = 30
