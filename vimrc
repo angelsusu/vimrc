@@ -76,7 +76,6 @@ Plugin 'grep.vim'                         " search keyword tool
 Plugin 'a.vim'                            " toggle .c(c) and .h
 Plugin 'DoxygenToolkit.vim'               " comment document
 Plugin 'fholgado/minibufexpl.vim'         " buffer navigator
-Plugin 'anscoral/winmanager.vim'          " window manager
 Plugin 'ervandew/supertab'                " Perform insert mode completions with Tab
 Plugin 'nathanaelkane/vim-indent-guides'  " make indent  visiablity
 Plugin 'rhysd/vim-clang-format'           " format code style
@@ -92,9 +91,10 @@ call vundle#end()           " required
 filetype plugin indent on   " required
 
 " nerdtree -------------------------------------------------------------------
-nmap <Leader>fl :NERDTreeToggle<CR>
+nmap wm :NERDTreeToggle<CR>
 "Open NERDTree when vim starts up
-"autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeWinSize = 30
@@ -139,7 +139,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 let g:bufExplorerMaxHeight=30
-let g:miniBufExplorerMoreThanOne=0
+let g:miniBufExplorerMoreThanOne=2
 
 " make cursor back to position before close 
 if has("autocmd")
@@ -148,22 +148,6 @@ if has("autocmd")
  \ exe "normal g'\"" |
 \ endif
 endif
-
-" winmanager -----------------------------------------------------------------
-let g:NERDTree_title='[NERD Tree]'
-let g:AutoOpenWinManager= 1
-let g:winManagerWindowLayout='NERDTree'
-"let g:winManagerWindowLayout='NERDTree|TagList'
-let g:winManagerWidth = 30
-let g:defaultExplorer = 0
-nmap wm :WMToggle<CR>
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
-
-function! NERDTree_IsValid()
-    return 1
-endfunction
 
 " supertab -------------------------------------------------------------------
 let g:SuperTabRetainCompletionType=2
