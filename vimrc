@@ -108,11 +108,11 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1            " exit vim when tlist window is the last one
 let Tlist_Show_One_File = 1              " only show current file's taglists
-let Tlist_GainFocus_On_ToggleOpen = 0    " foucs on show taglist window
+let Tlist_GainFocus_On_ToggleOpen = 1    " foucs on show taglist window
 let Tlist_php_settings = 'php;c:class;f:function;d:constant'
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_WinWidth = 30
-let Tlist_Auto_Open = 1
+let Tlist_Auto_Open = 0
 
 
 " grep -----------------------------------------------------------------------
