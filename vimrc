@@ -69,11 +69,13 @@ call vundle#begin()
 
 "let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'winmanager'                       " winmanager
 Plugin 'scrooloose/nerdtree'              " file tree
 Plugin 'xuyuanp/nerdtree-git-plugin'      " nerd tree show git status flags
 Plugin 'tomtom/checksyntax_vim'           " check file syntax
 Plugin 'taglist.vim'                      
-Plugin 'grep.vim'                         " search keyword tool
+Plugin 'mileszs/ack.vim'                  " ack search quickfix
+Plugin 'ctrlpvim/ctrlp.vim'               " search file
 Plugin 'a.vim'                            " toggle .c(c) and .h
 Plugin 'DoxygenToolkit.vim'               " comment document
 Plugin 'fholgado/minibufexpl.vim'         " buffer navigator
@@ -91,15 +93,29 @@ Plugin 'altercation/vim-colors-solarized' " color scheme themes
 call vundle#end()           " required
 filetype plugin indent on   " required
 
-" nerdtree -------------------------------------------------------------------
-nmap wm :NERDTreeToggle<CR>
-"Open NERDTree when vim starts up
+" winmanager -----------------------------------------------------------------
+let g:winManagerWindowLayout='NERDTree'
+let g:winManagerWidth = 30
+let g:defaultExplorer = 0
+" there is a bug when exec WMToggle, two blank split pane will be opened
+nnoremap <silent> wm :if IsWinManagerVisible() <BAR>WMToggle<CR><BAR> else<BAR> WMToggle<CR>:q<CR> endif <CR><CR>
+" open winmanager if no file opened when vim start
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exec "WMToggle" | q | endif
+
+" nerdtree -------------------------------------------------------------------
+let g:NERDTree_title='[NERD Tree]'
 "Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeWinSize = 30
 let NERDTreeAutoDeleteBuffer = 1
+
+function! NERDTree_Start()
+    exec 'NERDTree'
+endfunction
+
+function! NERDTree_IsValid()
+    return 1
+endfunction
 
 " nerdtree git plugin --------------------------------------------------------
 let g:NERDTreeIndicatorMapCustom = {
@@ -130,8 +146,30 @@ let Tlist_WinWidth = 30
 let Tlist_Auto_Open = 0
 
 
-" grep -----------------------------------------------------------------------
-nnoremap fa :Grep<CR>                    " find in project
+" ack ------------------------------------------------------------------------
+nnoremap fa :Ack<space> 
+" use ag replace ack if ag has been install in your system
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+let g:ack_qhandler = "botright copen 30"
+let g:ackpreview = 1
+let g:ack_autoclose = 1
+
+" ctrlp ----------------------------------------------------------------------
+let g:ctrlp_map = 'ff'
+let g:ctrlp_cmd = 'CtrlP'
+map <C-p> :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=30
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
 
 " a --------------------------------------------------------------------------
 nmap cd :A<CR>                           " toggle header and cpp file
