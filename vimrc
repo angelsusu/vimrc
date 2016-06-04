@@ -86,6 +86,7 @@ Plugin 'airblade/vim-gitgutter'           " show git diff  flag on guntter
 Plugin 'powerline/fonts'                  " powerline fonts
 Plugin 'vim-airline/vim-airline'          " a cool menu bar
 Plugin 'vim-airline/vim-airline-themes'   " themes for airline menu bar
+Plugin 'altercation/vim-colors-solarized' " color scheme themes
 
 call vundle#end()           " required
 filetype plugin indent on   " required
@@ -213,7 +214,14 @@ set t_Co=256
 let g:airline_powerline_fonts = 1
 "let g:airline_theme="luna"
 
-
+" solarized ------------------------------------------------------------------
+let g:solarized_termcolors=256
+colorscheme solarized
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
 " key maps -------------------------------------------------------------------
 
 " reload vimrc
