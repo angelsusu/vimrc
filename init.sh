@@ -4,17 +4,17 @@ home=$(cd;pwd)
 if [ ! -f "$dir/vimrc" ];then
     touch "vimrc"
 fi
-# 再检测一下home目录是否已经存在.vimrc文件 存在先删除
-if [ -f "$home/.vimrc" ];then
-    rm "$home/.vimrc"
-fi
+
 # 软链接home目录的.vimrc 到 本目录下的vimrc文件
-ln -s "$dir/vimrc" ~/.vimrc
+ln -sf "$dir/vimrc" ~/.vimrc
 
 # 如果home目录已经存在 .vim目录 先删除
 if [ -d "$home/.vim/bundle/Vundle.vim " ];then
     rm -rf "$home/.vim/bundle/Vundle.vim"
 fi
+
+# link conf to ~/.vim/conf
+ln -sf "$dir/conf" ~/.vim/
 
 # 检测是否已经安装git 未安装应该提示安装git后手动安装vundle
 if [ ! -n `which git` ];then
