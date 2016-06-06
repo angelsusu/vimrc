@@ -62,3 +62,4 @@ set mat=2     " How many tenths of a second to blink
 set incsearch
 set ignorecase
 
+filetype plugin on

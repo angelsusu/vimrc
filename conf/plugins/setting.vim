@@ -83,12 +83,15 @@ let g:ctrlsf_ignore_dir = ['.git', '.hg', '.svn', '.rvm']
 nmap <leader>cd :A<cr>                           " toggle header and cpp file
 
 " Doxygen Toolkit ------------------------------------------------------------
-nmap cm :Dox<cr>
+nmap <leader>dx :Dox<cr>
+let g:load_doxygen_syntax=1
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   "
 let g:DoxygenToolkit_authorName="Qiankun Gao"
 let g:doxygen_enhanced_color=1
+
+" nerd commenter -------------------------------------------------------------
 
 " minibufferexplorer ---------------------------------------------------------
 :nmap <leader>tm :MBEToggle<cr>:MBEFocus<cr>

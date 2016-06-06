@@ -13,7 +13,8 @@ Plugin 'taglist.vim'
 Plugin 'ctrlpvim/ctrlp.vim'               " search file
 Plugin 'dyng/ctrlsf.vim'                  " search keyworld in files
 Plugin 'a.vim'                            " toggle .c(c) and .h
-Plugin 'DoxygenToolkit.vim'               " comment document
+Plugin 'DoxygenToolkit.vim'               " comment as document
+Plugin 'scrooloose/nerdcommenter'         " comment tool
 Plugin 'fholgado/minibufexpl.vim'         " buffer navigator
 Plugin 'ervandew/supertab'                " Perform insert mode completions with Tab
 Plugin 'nathanaelkane/vim-indent-guides'  " make indent  visiablity
