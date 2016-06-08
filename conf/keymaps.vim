@@ -1,10 +1,10 @@
 " key maps -------------------------------------------------------------------
 
 " switch window splits 
-nmap <silent> <c-h> :wincmd h<cr>
-nmap <silent> <c-j> :wincmd j<cr>
-nmap <silent> <c-k> :wincmd k<cr>
-nmap <silent> <c-l> :wincmd l<cr>
+nmap <silent> <c-Left> :wincmd h<cr>
+nmap <silent> <c-Down> :wincmd j<cr>
+nmap <silent> <c-Up> :wincmd k<cr>
+nmap <silent> <c-Right> :wincmd l<cr>
 
 " jump to head of line
 nmap lg 0

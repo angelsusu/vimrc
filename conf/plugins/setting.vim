@@ -81,6 +81,7 @@ let g:ctrlsf_ignore_dir = ['.git', '.hg', '.svn', '.rvm']
 
 " a --------------------------------------------------------------------------
 nmap <leader>cd :A<cr>                           " toggle header and cpp file
+nmap <silent><F8> :A<cr>                           " toggle header and cpp file
 
 " Doxygen Toolkit ------------------------------------------------------------
 nmap <leader>dx :Dox<cr>
@@ -98,6 +99,9 @@ let g:doxygen_enhanced_color=1
 noremap <silent> <leader>tt :MBEbb<cr>
 noremap <silent> <leader>ft :MBEbf<cr>
 noremap <silent> <leader>dt :MBEbd<cr>
+
+noremap <silent> <s-l> :MBEbb<cr>
+noremap <silent> <s-h> :MBEbp<cr>
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -165,7 +169,7 @@ let g:airline_powerline_fonts = 1
 
 " solarized ------------------------------------------------------------------
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme darkblue
 if has('gui_running')
   set background=light
 else
