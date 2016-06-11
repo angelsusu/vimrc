@@ -1,12 +1,13 @@
 " winmanager -----------------------------------------------------------------
 let g:winManagerWindowLayout='NERDTree|'
-let g:winManagerWidth = 30
+let g:winManagerWidth = 25
 let g:defaultExplorer = 0
 " there is a bug when exec WMToggle, two blank split pane will be opened
 nnoremap <silent> wm :call WM_init()<cr>
 " open winmanager if no file opened when vim start
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call WM_init() | endif
+"autocmd VimEnter *  call WM_init()
 
 function! WM_init()
   if IsWinManagerVisible() | exec "WMToggle" | return | endif
@@ -122,28 +123,29 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 " indent guides --------------------------------------------------------------
-let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_enable_on_vim_startup=0
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 :nmap <silent> <Leader>ig <Plug>IndentGuidesToggle
 :nmap <silent> <Leader>ie <Plug>IndentGuidesEnable
 :nmap <silent> <Leader>id <Plug>IndentGuidesDisable
 
+
 " clang format ---------------------------------------------------------------
 " Toggle auto formatting:
 nmap <leader>tc :ClangFormatAutoToggle<cr>
+
 let g:clang_format#style_options = {
   \ "AccessModifierOffset" : -1,
   \ "AllowShortIfStatementsOnASingleLine" : "true",
   \ "AlwaysBreakTemplateDeclarations" : "true",
-  \ "AlignTrailingComments" : "false",
   \ "Standard" : "C++11",
   \ "AlignConsecutiveAssignments" : "true"
   \}
 " map to cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer> <leader>cf :<C-u>ClangFormat<cr>
 autocmd FileType c,cpp,objc vnoremap <buffer> <leader>cf :ClangFormat<cr>
-autocmd FileType c,cpp,objc ClangFormatAutoEnable  "disable auto format on save
+autocmd FileType c,cpp,objc ClangFormatAutoDisable  "disable auto format on save
 
 " youcomeleteme --------------------------------------------------------------
 nnoremap <leader>td :YcmCompleter GoToDefinition<cr> 
@@ -175,3 +177,12 @@ if has('gui_running')
 else
   set background=dark
 endif
+
+" grep
+nnoremap <silent> <F3> :Grep<CR><CR><CR>
+nnoremap <silent> <F4> :Rgrep<CR><CR>
+let Grep_Default_Filelist = '*.cpp *.c *.cc *.h *.py *.lua *.hpp'
+nmap <C-p> :cp<CR>
+nmap <C-n> :cn<CR>
+nmap <silent> <F11> :cw<CR>
+

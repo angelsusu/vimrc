@@ -25,3 +25,5 @@ runtime! conf/setting.vim
 runtime! conf/plugins.vim
 runtime! conf/keymaps.vim
 
+:inoremap <c-l> <esc>ddi
+
