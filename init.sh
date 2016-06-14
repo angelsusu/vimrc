@@ -14,8 +14,8 @@ if [ ! -d "$home/.vim" ];then
 fi
 
 # link conf to ~/.vim/conf
-ln -sf "$dir/conf"  ~/.vim/conf
-ln -sf "$dir/syntax"  ~/.vim/syntax
+ln -sf "$dir/conf"  ~/.vim/
+ln -sf "$dir/syntax"  ~/.vim/
 
 # git not found waring
 if [ ! -n `which git` ];then
