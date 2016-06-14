@@ -27,4 +27,5 @@ runtime! conf/keymaps.vim
 
 :inoremap <c-l> <esc>ddi
 
+filetype plugin indent on
 

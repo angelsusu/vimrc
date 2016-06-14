@@ -32,9 +32,6 @@ set nu
 set ruler
 set rulerformat=%15(%c%V\ %p%%%)
 
-" Column 80 marker
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
 
 " Yanks go on clipboard instead.
 set clipboard+=unnamed
@@ -63,3 +60,19 @@ set incsearch
 set ignorecase
 
 filetype plugin on
+
+" Column 80 marker
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
+
+match Error /\%81v.\+/
+set colorcolumn=81
+
+" EOL space
+autocmd FileType c,cpp,h,cc autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Visual Mode Selected Color 
+augroup ColorForVisual
+  autocmd!
+  autocmd ColorScheme * :hi Visual ctermbg=red ctermfg=blue guibg=#592929
+augroup END
