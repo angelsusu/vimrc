@@ -76,4 +76,5 @@ augroup ColorForVisual
   autocmd!
   autocmd ColorScheme * :hi Visual ctermbg=red ctermfg=white guibg=#592929
   autocmd ColorScheme * :hi Search ctermbg=red ctermfg=white guibg=#592929
+  autocmd ColorScheme * :hi IncSearch ctermbg=red ctermfg=white guibg=#592929
 augroup END
