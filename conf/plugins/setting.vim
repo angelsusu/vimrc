@@ -165,9 +165,9 @@ nmap <leader>]g :GitGutterNextHunk<cr>
 nmap <leader>[g :GitGutterPrevHunk<cr>
 
 " airline status bar ---------------------------------------------------------
-set t_Co=256
-let g:airline_powerline_fonts = 1
-"let g:airline_theme="luna"
+" set t_Co=256
+" let g:airline_powerline_fonts = 1
+let g:airline_theme="luna"
 
 " solarized ------------------------------------------------------------------
 let g:solarized_termcolors=256

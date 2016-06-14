@@ -22,8 +22,8 @@ Plugin 'rhysd/vim-clang-format'           " format code style
 Plugin 'kshenoy/vim-signature'            " toggle, display and navigate marks
 Plugin 'airblade/vim-gitgutter'           " show git diff  flag on guntter
 Plugin 'powerline/fonts'                  " powerline fonts
-"Plugin 'vim-airline/vim-airline'          " a cool menu bar
-"Plugin 'vim-airline/vim-airline-themes'   " themes for airline menu bar
+Plugin 'vim-airline/vim-airline'          " a cool menu bar
+Plugin 'vim-airline/vim-airline-themes'   " themes for airline menu bar
 Plugin 'altercation/vim-colors-solarized' " color scheme themes
 Plugin 'grep.vim'
 "Plugin 'valloric/youcompleteme'           " complete 

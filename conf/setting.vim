@@ -74,5 +74,6 @@ autocmd FileType c,cpp,h,cc autocmd BufWritePre <buffer> :%s/\s\+$//e
 " Visual Mode Selected Color 
 augroup ColorForVisual
   autocmd!
-  autocmd ColorScheme * :hi Visual ctermbg=red ctermfg=blue guibg=#592929
+  autocmd ColorScheme * :hi Visual ctermbg=red ctermfg=white guibg=#592929
+  autocmd ColorScheme * :hi Search ctermbg=red ctermfg=white guibg=#592929
 augroup END

@@ -9,14 +9,13 @@ fi
 ln -sf "$dir/vimrc" ~/.vimrc
 
 # clear old ~/.vim if exist or create it
-if [ -d "$home/.vim" ];then
-    rm -rf "$home/.vim/*"
-else
+if [ ! -d "$home/.vim" ];then
     mkdir "$home/.vim"
 fi
 
 # link conf to ~/.vim/conf
-ln -sf "$dir/conf" ~/.vim/
+ln -sf "$dir/conf"  ~/.vim/conf
+ln -sf "$dir/syntax"  ~/.vim/syntax
 
 # git not found waring
 if [ ! -n `which git` ];then

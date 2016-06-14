@@ -1,5 +1,5 @@
 ## Installation:
-`git clone https://github.com/gaoqiankun/vimrc.git && cd vimrc && bash init.sh`
+`git clone https://github.com/qianxinyu/vimrc.git && cd vimrc && bash init.sh`
 
 
 ## Dependencies:
