@@ -86,11 +86,14 @@ nmap <silent><F8> :A<cr>                           " toggle header and cpp file
 
 " Doxygen Toolkit ------------------------------------------------------------
 nmap <leader>dx :Dox<cr>
+nmap <leader>dl :DoxLic<cr>
+nmap <leader>da :DoxAuthor<cr>
 let g:load_doxygen_syntax=1
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   "
-let g:DoxygenToolkit_authorName="Qiankun Gao"
+let g:DoxygenToolkit_authorName="xinyuqian"
+" let g:DoxygenToolkit_licenseTag="My own license"
 let g:doxygen_enhanced_color=1
 
 " nerd commenter -------------------------------------------------------------
@@ -172,6 +175,7 @@ let g:airline_theme="luna"
 " solarized ------------------------------------------------------------------
 let g:solarized_termcolors=256
 colorscheme darkblue
+"colorscheme solarized
 if has('gui_running')
   set background=light
 else

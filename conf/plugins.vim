@@ -29,7 +29,9 @@ Plugin 'grep.vim'
 "Plugin 'valloric/youcompleteme'           " complete 
 "Plugin 'shougo/neocomplete.vim'
 Plugin 'shougo/neocomplcache.vim'
-Plugin 'meiraka/vim-google-cpp-style-indent'
+"Plugin 'meiraka/vim-google-cpp-style-indent'
+Plugin 'phlip9/google-vim_cpp_indent'
+
 
 call vundle#end()           " required
 filetype plugin indent on   " required
