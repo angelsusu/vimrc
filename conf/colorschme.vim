@@ -15,4 +15,5 @@ augroup END
 
 augroup CustomColorSchemeForSolarized
   autocmd!
+  autocmd ColorScheme solarized :hi MyTagListTagName term=underline cterm=bold ctermfg=5 guifg=#ffa0a0
 augroup END
