@@ -185,7 +185,7 @@ endif
 " grep -----------------------------------------------------------------------
 nnoremap <silent> <F3> :Grep<CR><CR><CR>
 nnoremap <silent> <F4> :Rgrep<CR><CR>
-let Grep_Default_Filelist = '*.cpp *.c *.cc *.h *.py *.lua *.hpp'
+let Grep_Default_Filelist = '*.cpp *.c *.cc *.h *.py *.lua *.hpp *.java'
 nmap <C-p> :cp<CR>
 nmap <C-n> :cn<CR>
 nmap <silent> <F11> :cw<CR>
