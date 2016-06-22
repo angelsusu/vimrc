@@ -65,8 +65,9 @@ filetype plugin on
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
 
-match DiffChange /\%81v.\+/
-set colorcolumn=81
+match Error /\%81v.\+/
+"set colorcolumn=81
+"let &colorcolumn=join(range(81,999),",")
 
 " EOL space
 autocmd FileType c,cpp,h,cc autocmd BufWritePre <buffer> :%s/\s\+$//e

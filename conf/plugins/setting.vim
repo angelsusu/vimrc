@@ -47,7 +47,7 @@ let g:NERDTreeIndicatorMapCustom = {
 nmap tl :TlistToggle<cr>
 set tags=tags;
 set autochdir
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1            " exit vim when tlist window is the last one
 let Tlist_Show_One_File = 1              " only show current file's taglists
