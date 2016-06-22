@@ -45,7 +45,9 @@ let g:NERDTreeIndicatorMapCustom = {
 "
 " taglist --------------------------------------------------------------------
 nmap tl :TlistToggle<cr>
-set tags=./tags
+nmap tl :TagbarToggle<CR>
+set tags=tags;
+set autochdir
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1            " exit vim when tlist window is the last one
@@ -167,10 +169,6 @@ let g:GitGutterLineHighlightsEnable = 1
 nmap <leader>]g :GitGutterNextHunk<cr>
 nmap <leader>[g :GitGutterPrevHunk<cr>
 
-" airline status bar ---------------------------------------------------------
-" set t_Co=256
-" let g:airline_powerline_fonts = 1
-let g:airline_theme="luna"
 
 " solarized ------------------------------------------------------------------
 let g:solarized_termcolors=256
