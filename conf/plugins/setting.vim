@@ -176,8 +176,8 @@ nmap <leader>[g :GitGutterPrevHunk<cr>
 
 " solarized ------------------------------------------------------------------
 let g:solarized_termcolors=256
-colorscheme darkblue
-"colorscheme solarized
+"colorscheme darkblue
+colorscheme solarized
 if has('gui_running')
   set background=light
 else
