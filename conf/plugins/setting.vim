@@ -112,6 +112,12 @@ noremap <silent> <leader>dt :MBEbd<cr>
 
 noremap <silent> <s-l> :MBEbb<cr>
 noremap <silent> <s-h> :MBEbp<cr>
+
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l
+
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -176,8 +182,8 @@ nmap <leader>[g :GitGutterPrevHunk<cr>
 
 " solarized ------------------------------------------------------------------
 let g:solarized_termcolors=256
-colorscheme darkblue
-"colorscheme solarized
+"colorscheme darkblue
+colorscheme solarized
 if has('gui_running')
   set background=light
 else

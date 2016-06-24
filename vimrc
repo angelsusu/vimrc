@@ -21,7 +21,7 @@ endfunction
 nmap <leader>k :verbose map<cr>
 
 
-runtime! conf/colorschme.vim
+"runtime! conf/colorschme.vim
 runtime! conf/setting.vim
 runtime! conf/plugins.vim
 runtime! conf/keymaps.vim

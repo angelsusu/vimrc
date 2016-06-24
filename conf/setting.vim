@@ -51,7 +51,7 @@ set noerrorbells
 set novisualbell
 set t_vb= "close visual bell
 
-" Search ----------------------------------------------------------------
+" Search ---------------------------------------------------------------
 set hlsearch  " Highlight search things
 set magic     " Set magic on, for regular expressions
 set showmatch " Show matching bracets when text indicator is over them
@@ -65,7 +65,7 @@ filetype plugin on
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
 
-match DiffChange /\%81v.\+/
+match Error /\%81v.\+/
 set colorcolumn=81
 
 " EOL space
@@ -74,3 +74,5 @@ nmap w]  :resize +3<CR>
 nmap w[  :resize -3<CR>
 nmap w,  :vertical resize -3<CR>
 nmap w.  :vertical resize +3<CR>
+
+
