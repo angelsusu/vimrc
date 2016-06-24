@@ -66,7 +66,8 @@ filetype plugin on
 " match OverLength /\%81v.\+/
 
 match Error /\%81v.\+/
-set colorcolumn=81
+"set colorcolumn=81
+"let &colorcolumn=join(range(81,999),",")
 
 " EOL space
 autocmd FileType c,cpp,h,cc autocmd BufWritePre <buffer> :%s/\s\+$//e
